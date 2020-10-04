@@ -14,16 +14,6 @@ c3=IntVar()
 c4=IntVar()
 c5=IntVar()
 
-def clicked():
-    result=length.get()
-    if(result<5):
-        summary="Low"
-    elif(result<10):
-        summary="Moderate"
-    else:
-        summary="High"
-    messagebox.showinfo("LACE Score" , "Score : "+str(result)+"; Condition : "+str(summary))
-
 
 lbl=Label(root,text="Select Maximum Number of Days Stayed",foreground="black",background="white")
 
@@ -34,6 +24,20 @@ lr4 = Radiobutton(root,text='6', value=4, variable=length)
 lr5 = Radiobutton(root,text='13', value=5, variable=length)
 lr6 = Radiobutton(root,text='more than 14', value=7, variable=length)
 
+def clicked():
+    if(int(c1e.get())+(int(c2e.get())*2)+(int(c3e.get())*3)+(int(c4e.get())*4)+(int(c5e.get())*6)>4):
+        c=4
+    else:
+        c=0
+    result=length.get()+admission.get()+int(e1e.get())+c
+    if(result<5):
+        summary="Low"
+    elif(result<10):
+        summary="Moderate"
+    else:
+        summary="High"
+    messagebox.showinfo("LACE Score" , "Score : "+str(result)+"; Condition : "+str(summary))
+        
 
 btn = Button(root, text="Get Result", command=clicked)
 
@@ -80,5 +84,19 @@ c2e.grid(column=1,row=13)
 c3e.grid(column=1,row=14)
 c4e.grid(column=1,row=15)
 c5e.grid(column=1,row=16)
+
+e1bl=Label(root,text="How many times did the patient visit the emergeny ward",foreground="black",background="white")
+e2bl=Label(root,text="Note: Duration is within 6 months and 4 is maximum",foreground="black",background="white")
+
+e1bl.grid(column=0,row=18)
+e2bl.grid(column=0,row=19)
+
+e1e=Entry(root,width=10)
+
+e1e.grid(column=1,row=19)
+
+btn.grid(column=0,row=21)
+
+
 
 root.mainloop()
