@@ -45,4 +45,40 @@ lr4.grid(column=1,row=4)
 lr5.grid(column=1,row=5)
 lr6.grid(column=1,row=6)
 
+abl=Label(root,text="Is the patient admitted through Emergency Block ?",foreground="black",background="white")
+
+ar1=Radiobutton(root,text="Yes", value=3 , variable=admission)
+ar2=Radiobutton(root,text="No", value=0 ,variable=admission)
+
+abl.grid(column=0,row=8)
+ar1.grid(column=1,row=8)
+ar2.grid(column=1,row=9)
+
+c0bl=Label(root,text="For the following Enter 1 if the disease/disorder applicable else 0",foreground="black",background="white")
+c1bl=Label(root,text="Myocardial Infaction ,Cerebrovascular Disease , Vascular Disease , Diabetes without complications")
+c2bl=Label(root,text="Cogestive Heartfailure , Diabetes with end organ damage , Chronic Pulmonary Disease , Mid Liver or Renal Disease , Any Tumour")
+c3bl=Label(root,text="Dementia , Connective Tissue Disease")
+c4bl=Label(root,text="AIDS , Severe Liver or Renal Disease")
+c5bl=Label(root,text="Metastatic Solid Tumor")
+
+c1e=Entry(root,width=10)
+c2e=Entry(root,width=10)
+c3e=Entry(root,width=10)
+c4e=Entry(root,width=10)
+c5e=Entry(root,width=10)
+
+
+c0bl.grid(column=0,row=11)
+c1bl.grid(column=0,row=12)
+c2bl.grid(column=0,row=13)
+c3bl.grid(column=0,row=14)
+c4bl.grid(column=0,row=15)
+c5bl.grid(column=0,row=16)
+
+c1e.grid(column=1,row=12)
+c2e.grid(column=1,row=13)
+c3e.grid(column=1,row=14)
+c4e.grid(column=1,row=15)
+c5e.grid(column=1,row=16)
+
 root.mainloop()
