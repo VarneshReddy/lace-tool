@@ -1,4 +1,4 @@
-# Photo-Bill-Mart
+# LACE Tool
 
 Python implementation of LACE - Tool used in patient condition analysis .
 LACE given as in 
